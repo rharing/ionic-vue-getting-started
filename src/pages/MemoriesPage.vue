@@ -1,52 +1,19 @@
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>All memories</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content :fullscreen="true">
-      <ion-list>
-        <ion-item>Max</ion-item>
-        <ion-item>Manuel</ion-item>
-        <ion-item>Julie</ion-item>
-        <ion-item>George</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-page>
+ <base-layout page-title="All memories">
+   <ion-list>
+     <ion-item>Max</ion-item>
+     <ion-item>Manuel</ion-item>
+     <ion-item>Julie</ion-item>
+     <ion-item>George</ion-item>
+   </ion-list>
+ </base-layout>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonList, IonItem } from '@ionic/vue';
+import {IonList, IonItem } from '@ionic/vue';
+import BaseLayout from "@/components/base/BaseLayout.vue";
 </script>
 
 <style scoped>
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
 </style>
