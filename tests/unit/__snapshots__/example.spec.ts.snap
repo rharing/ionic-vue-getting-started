@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MemoriesPage.vue > renders MemoriesPage vue 1`] = `"All memoriesMaxManuelJulieGeorge"`;
