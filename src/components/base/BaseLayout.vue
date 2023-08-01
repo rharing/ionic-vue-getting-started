@@ -3,7 +3,7 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-back-button/>
+          <ion-back-button :default-href="pageDefaultBackLink"/>
         </ion-buttons>
         <ion-title>{{ pageTitle }}</ion-title>
       </ion-toolbar>
@@ -22,6 +22,14 @@ const props = defineProps({
     required: true,
     type: String,
   },
+  pageDefaultBackLink:{
+    type: String
+  }
+
 });
+let pageDefaultBackLink="/memories";
+if(props.pageDefaultBackLink){
+  pageDefaultBackLink= props.pageDefaultBackLink;
+}
 
 </script>
