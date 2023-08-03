@@ -1,6 +1,6 @@
 <template>
  <base-layout page-title="Details page">
-   <h2>details for: {{props.id}}</h2>
+   <memory-overview :memory="memory"/>
  </base-layout>
 </template>
 
@@ -12,7 +12,11 @@ const props = defineProps({
     required: true,
   },
 })
+import { useMemoriesStore} from '@/store/memoriesStore';
+import MemoryOverview from "@/components/memories/MemoryOverview.vue";
 
+const memoriesStore = useMemoriesStore();
+let memory = memoriesStore.loadMemory(props.id)
 </script>
 
 <style scoped>
