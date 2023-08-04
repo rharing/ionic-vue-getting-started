@@ -5,6 +5,9 @@
         <ion-buttons slot="start">
           <ion-back-button :default-href="pageDefaultBackLink"/>
         </ion-buttons>
+        <ion-buttons slot="end">
+          <slot name="actions-end"/>
+        </ion-buttons>
         <ion-title>{{ pageTitle }}</ion-title>
       </ion-toolbar>
     </ion-header>

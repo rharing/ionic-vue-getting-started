@@ -1,6 +1,7 @@
 <template>
  <base-layout page-title="All memories">
-   <ion-list>
+   <memory-list :memories="memories"/>
+<!--   <ion-list>
      <ion-item v-for="memory in memories"
                :router-link="`/memories/${memory.id}`"
                :key="memory.id"
@@ -13,12 +14,13 @@
        </ion-label>
 
      </ion-item>
-   </ion-list>
+   </ion-list>-->
  </base-layout>
 </template>
 
 <script setup lang="ts">
-import {IonList, IonItem, IonImg, IonThumbnail,IonLabel } from '@ionic/vue';
+
+import MemoryList from'@/components/memories/MemoryList.vue'
 import { useMemoriesStore} from '@/store/memoriesStore';
 
 const memoriesStore = useMemoriesStore();

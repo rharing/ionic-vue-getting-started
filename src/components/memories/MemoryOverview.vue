@@ -8,7 +8,7 @@ let memory = props.memory;
 <template>
 
     <ion-img :src="memory.image" :alt="memory.title"/>
-  <h2> {{memory.title}}</h2>
-  <p> {{memory.description}}</p>
+  <h2 class="ion-text-center"> {{memory.title}}</h2>
+  <p class="ion-text-center"> {{memory.description}}</p>
 
 </template>

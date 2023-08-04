@@ -15,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/memories/:id',
     props: true,
     component: ()=> import('@/pages/MemoriesPageDetail.vue')
+  },
+  {
+    path: '/memories/add',
+    props: true,
+    component: ()=> import('@/pages/AddMemoryPage.vue')
   }
 ]
 
