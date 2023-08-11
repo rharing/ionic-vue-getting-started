@@ -33,6 +33,10 @@ export const useMemoriesStore = defineStore({
         , actions: {
             loadMemory(memoryId) {
                 return this.memories.find((memory) => memory.id === memoryId);
+            },
+            saveMemory(memoryData){
+                this.memories.unshift(memoryData);
+                console.log("adter save memories:", this.memories);
             }
         }
     });

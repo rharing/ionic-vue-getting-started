@@ -1,31 +1,25 @@
 <template>
- <base-layout page-title="All memories">
-   <memory-list :memories="memories"/>
-<!--   <ion-list>
-     <ion-item v-for="memory in memories"
-               :router-link="`/memories/${memory.id}`"
-               :key="memory.id"
-     >
-       <ion-thumbnail slot="start">
-         <ion-img :src="memory.image" :alt="memory.title"/>
-       </ion-thumbnail>
-       <ion-label>
-         {{ memory.title }}
-       </ion-label>
-
-     </ion-item>
-   </ion-list>-->
- </base-layout>
+  <base-layout page-title="All memories">
+    <memory-list :memories="memories"/>
+   <template v-slot:actions-end>
+     <ion-button router-link="/memories/add">
+       <ion-icon slot="icon-only" :icon="add"></ion-icon>
+     </ion-button>
+   </template>
+  </base-layout>
 </template>
 
 <script setup lang="ts">
-
+import { IonButton, IonIcon } from "@ionic/vue";
+import { add } from "ionicons/icons";
 import MemoryList from'@/components/memories/MemoryList.vue'
 import { useMemoriesStore} from '@/store/memoriesStore';
 
-const memoriesStore = useMemoriesStore();
 import BaseLayout from "@/components/base/BaseLayout.vue";
-const {memories} = memoriesStore;
+import {storeToRefs} from "pinia";
+
+const memoriesStore = useMemoriesStore();
+const {memories} = storeToRefs(memoriesStore);
 </script>
 
 <style scoped>
